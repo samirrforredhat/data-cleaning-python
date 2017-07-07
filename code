@@ -1,0 +1,7 @@
+import pandas as pd
+md = pd.read_csv('~/Documents/conslidated-database-mails.csv')
+name = md['Name'].str.lower()
+email = md['Email'].str.lower()
+db = pd.concat([name,email],axis=1)
+email = email.fillna('sample@example.com')
+db
